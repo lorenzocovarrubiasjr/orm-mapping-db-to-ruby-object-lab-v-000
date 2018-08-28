@@ -30,10 +30,10 @@ class Student
     sql = <<-SQL
     SELECT *
     FROM students
-    WHERE grade BETWEEN 0 and 11 ?
+    WHERE grade BETWEEN 0 AND 11
     SQL
     
-    DB[:conn].execute(sql, 11).map do |row|
+    DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
   end 
