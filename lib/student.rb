@@ -30,10 +30,10 @@ class Student
     sql = <<-SQL
     SELECT *
     FROM students
-    WHERE grade = ?
+    WHERE grade => ?
     SQL
     
-    DB[:conn].execute(sql, 9).map do |row|
+    DB[:conn].execute(sql, 11).map do |row|
       self.new_from_db(row)
     end
   end 
