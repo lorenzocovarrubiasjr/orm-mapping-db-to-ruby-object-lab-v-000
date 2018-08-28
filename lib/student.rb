@@ -10,9 +10,10 @@ class Student
   end
 
   def self.all
-    sql = "SELECT * FROM students"
+    sql = <<-SQL
+    "SELECT * FROM students"
     DB[:conn].execute(sql)
-    
+    SQL
   end
   
   def self.all_students_in_grade_9
